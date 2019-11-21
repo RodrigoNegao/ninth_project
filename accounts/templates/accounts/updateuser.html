@@ -1,0 +1,67 @@
+{% extends "base/base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% comment %}
+    Update User tests
+
+    {{ form}}
+
+{% endcomment %}
+
+{% block body_block %}
+      <div class="container">
+              <h1>Perfil</h1>
+              <div class="content-section border p-3">
+                       <div class="media border p-3">
+                            <!-- {% if user.avatar %}
+                                <img class="rounded-circle account-img" src="{{ user.avatar.url }}" alt="...">
+                            {% else %}
+                                <img class="rounded-circle account-img" src="{% static 'images/defaults/default1.jpg' %}" alt="default">
+                            {% endif %} -->
+                            <img class="border rounded-circle account-img mr-3" style="width: 100px; height: 100px;" src="{{ user.avatar.url }}" alt="avatar">
+                               <div class="media-body">
+                                 <h2 class="account-heading">{{ user.username }}</h2>
+                                 <p class="text-secondary">{{ user.email }}</p>
+                               </div>
+                       </div>
+                 <hr>
+                 <!-- FORM HERE -->
+                         {% if messages %}
+                           <div class="alert alert-success" role="alert">
+                                   {% for message in messages %}
+                                        <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+                                   {% endfor %}
+                             </div>
+                          {% endif %}
+                       <form method="POST" class="form " enctype="multipart/form-data" >
+                         {% csrf_token %}
+                         {% bootstrap_form form %}                         
+                             <div class="form-group">
+                                 <div class="custom-file">
+                                   <input type="file" name="avatar" class="custom-file-input" id="customFile id_avatar">
+                                   <label class="custom-file-label" for="customFile">Choose file</label>
+                                 </div>
+                             </div>
+                          {% bootstrap_form profile_form %}
+                           {% buttons %}
+                             <button type="submit" class="btn btn-primary">Atualizar</button>
+                           {% endbuttons %}
+                       </form>
+                </div>
+      </div>
+      <br>
+      <br>
+{% endblock %}
+                              {% comment %}
+                                    {% bootstrap_form avatar %}
+                                    {{ avatar }}
+                                     Django use id="id_avatar" to call
+                              {% endcomment %}
+
+                                {% comment %}
+                                    <form method="POST" class="form">
+                                      {% csrf_token %}
+                                      {{ form }}
+                                      <button type="submit" class="btn btn-primary">Atualizar</button>
+                                  {% endcomment %}

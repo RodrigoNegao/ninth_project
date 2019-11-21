@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+{% load bootstrap4 %}
+
+{% comment %}
+
+{% endcomment %}
+
+{% block body_block %}
+<br>
+<div class="container border p-3">
+    <br>
+    <h1>Cadastre-se</h1>
+      <form method="POST" class="form ">
+
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        {% endbuttons %}
+      </form>
+    </div>
+  <br>
+{% endblock %}

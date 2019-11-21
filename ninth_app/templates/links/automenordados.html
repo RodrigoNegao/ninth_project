@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block head_block %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+{% endblock %}
+{% block body_block %}
+
+
+<div class="title1">O que precisa para fazer um Autorização para Menor</div>
+<div class="title2">COM O NOSSO GERADOR DOCUMENTOS</div>
+<!-- image -->
+<!--  DODOS-->
+
+<div class="text">FACIL, para ter um contrato com base legal</div>
+<br>
+<br>
+<div class="jumbotron">
+      <div class="title2">Dados para Autorização</div>
+      <form class="validate" method="POST" action= {% url 'automenor' %}>
+        {% csrf_token %}
+        <div class="title3">Dados do pai/mãe ou responsável legal</div>
+        <div class="form-row">
+          <div class="form-group col-sm-5"><label>Nome completo do pai/mãe ou responsável legal:</label><input type="text" class="form-control" name="name1" maxlength="25" placeholder="" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Telefone para o Contato 1:</label><input id="nphone1" type="text" id="nphone" class="form-control" name="nphone1" placeholder="" required></div>
+          <div class="form-group col-sm-3"><label>Telefone 2(Opcional):</label><input type="text" id="nphone2" class="form-control" name="nphone2" placeholder=""></div>
+          <div class="form-group col-sm-3"><label>Nacionalidade :</label><input type="text" class="form-control" value="brasileiro" name="bornfrom1" placeholder="" required></div>
+          <div class="form-group col-sm-2"><label for="inputmaritalStatus1">Estado Civil:</label>
+            <select id="inputmaritalStatus" name="inputmaritalStatus1" class="form-control"><option selected required></option><option value="União Estavel">União Estavel</option><option value="Solteiro(a)">Solteiro(a)</option><option value="Casado(a)">Casado(a)</option><option value="Divorciado(a)">Divorciado(a)</option><option value="Viuvo(a)">Viuvo(a)</option></select></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-3"><label>Cargo:</label><input type="text" class="form-control" name="work1" maxlength="15" placeholder="Ex.: Adm, Aposentado" required></div>
+            <div class="form-group col-sm-3"><label>RG :</label><input id="RG1"type="text" class="form-control" name="RG1" maxlength="10" placeholder="" required></div>
+            <div class="form-group col-sm-2"><label>Expeditor:</label><input type="text" class="form-control" name="RG1from" maxlength="5" placeholder="" required></div>
+            <div class="form-group col-sm-3"><label>CPF :</label><input type="text" id="CPF1" class="form-control" name="CPF1"  placeholder="" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Endereço:</label><input type="text" class="form-control" name="address1" maxlength="25" placeholder="" required></div>
+          <div class="form-group col-sm-3"><label>Cidade:</label><input type="text" class="form-control" name="city1" maxlength="25" placeholder="" required></div>
+          <div class="form-group col-sm-1"><label>Estado:</label><input type="text" class="form-control" name="state1" maxlength="2" placeholder="" required></div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-sm-3"><label>Parentesco:</label><input type="text" class="form-control" name="kinship" maxlength="15" placeholder="" required></div>
+        </div>
+        <div class="title3">Dados Pessoais do MENOR</div>
+        <div class="form-row">
+          <div class="form-group col-sm-5"><label>Nome do MENOR:</label><input type="text" class="form-control" name="name2" maxlength="50" placeholder="" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Idade:</label><input type="text" class="form-control" name="age1" maxlength="2" placeholder="" required></div>
+          <div class="form-group col-sm-3"><label>RG:</label><input type="text" id="RG2" class="form-control" name="RG2" placeholder="" required></div>
+          <div class="form-group col-sm-2"><label>Expeditor:</label><input type="text" class="form-control" name="RG2from" maxlength="5" placeholder="" required></div>
+        </div>
+        <div class="title3">Dados Pessoais do Responsavel do MENOR no EVENTO</div>
+        <div class="form-row">
+          <div class="form-group col-sm-5"><label>Nome do Responsavel:</label><input type="text" class="form-control" name="name3" maxlength="50" placeholder="" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Telefone(opcional) :</label><input id="nphone3" type="text" class="form-control" name="nphone3" placeholder="" ></div>
+          <div class="form-group col-sm-3"><label>Idade:</label><input type="text" class="form-control" name="age2" placeholder=""></div>
+          <div class="form-group col-sm-3"><label>RG:</label><input type="text" id="RG3" class="form-control" name="RG3" placeholder="" required></div>
+          <div class="form-group col-sm-2"><label>Expeditor:</label><input type="text" class="form-control" name="RG3from" maxlength="5" placeholder="" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Endereço:</label><input type="text" class="form-control" name="address2" maxlength="25" placeholder="" required></div>
+          <div class="form-group col-sm-3"><label>Cidade:</label><input type="text" class="form-control" name="city2" maxlength="25" placeholder="" required></div>
+          <div class="form-group col-sm-1"><label>Estado:</label><input type="text" class="form-control" name="state2" maxlength="2" placeholder="" required></div>
+        </div>
+        <div class="title3">Dados do Evento</div>
+        <div class="form-row">
+            <div class="form-group col-sm-3"><label>Nome do evento, show, festa:</label><input type="text" class="form-control" name="party1" maxlength="30" placeholder=""required></div>
+            <div class="form-group col-sm-4"><label>Data do Evento:</label><input required name="datapicker" id="datepicker" width="250" value='{% now "j" %}/{% now "m" %}/{% now "Y" %}'/></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-5"><label>Endereço:</label><input type="text" class="form-control" name="address3" maxlength="50" placeholder=""required></div>
+        </div>
+        <div class="title3">Outros Dados</div>
+        <div class="form-row">
+            <div class="form-group col-sm-5"><label>Cidade onde será Assinado:</label><input type="text" class="form-control" name="localcity" maxlength="50" placeholder=""required></div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Gerar PDF">
+  </form>
+  <br>
+  <br>
+<div class="card-group">
+            <div class="card">
+              <img src="{% static 'images/avengers4.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="{% static 'images/avengersEnd.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="{% static 'images/avengersEnd.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+  </div>
+  <script src="{% static 'js/datapicker.js' %}"></script>
+  <script src="{% static 'js/nphoneMask.js' %}"></script>
+  <script src="{% static 'js/cpfMask.js' %}"></script>
+  <script src="{% static 'js/rgMask.js' %}"></script>
+{% endblock %}

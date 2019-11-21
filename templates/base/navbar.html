@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow " style="background-color: black;">
+
+        <a class="navbar-brand" href="{% url 'index' %}">Company</a>
+        {% comment %}
+          Brand and toggle get grouped for better mobile display
+          This is the actual code that creates the "hamburger icon"
+          The data-target grabs ids to put into the icon
+        {% endcomment %}
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {% comment %}
+          Anything inside of collapse navbar-collapse goes into the "hamburger"
+        {% endcomment %}
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="navbar-nav">
+            {% comment %}
+               the span class "sr-only" tells screen readers that Home is the active link, for accessibility
+            {% endcomment %}
+
+            <a class="nav-item nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link {% if request.resolver_match.url_name == 'resumetemp' %}active{% endif %}" href="{% url 'resumetemp' %}">Crie seu Curriculo</a>
+            {% comment %} <a class="nav-item nav-link" href="{% url 'recibo' %}">Recibo PDF</a> {% endcomment %}
+          </div>
+
+                    <div class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle active" href="#" id="navbar-dropdown-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbar-dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="http://www.google.com">Go to Google</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+
+                        <!-- Use this to separate a new link: -->
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                      </div>
+                    </div>
+          <div class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                    {% comment %}
+                         <!-- LOGIN -->
+                    {% endcomment %}
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary">Olá {{ user.username }}</button>
+                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url 'accounts:updateuser' %}">Perfil</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
+                        </div>
+                    </div>
+                    {% comment %}
+                        <a class="nav-item nav-link" href="#" class="btn btn-simple activate">Olá {{ user.username }}</a>
+                          <a class="nav-item nav-link" href="{% url 'accounts:logout' %}" class="btn btn-simple">Logout</a>
+                    {% endcomment %}
+            {% else %}
+              <a class="nav-item nav-link" href="{% url 'accounts:login' %}" class="btn btn-simple">Login</a>
+              <a class="nav-item nav-link" href="{% url 'accounts:signup' %}" class="btn btn-simple">Cadastre-se</a>
+            {% endif %}
+            {% comment %}
+                 <!-- <a class="nav-item nav-link" href="#">On Right</a> -->
+            {% endcomment %}
+
+          </div>
+
+        </div>
+    </nav>

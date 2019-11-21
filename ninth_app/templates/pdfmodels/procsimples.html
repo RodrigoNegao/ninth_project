@@ -1,0 +1,23 @@
+{% extends "pdfmodels/basepdf1.html" %}
+{% load static %}
+{% block body_block %}
+
+<div class="title1" >PROCURAÇÃO</div>
+<hr>
+<div class="text">OUTORGANTE(A):<span style="font-weight:bold">{{name1|upper}}</span>, {{bornfrom1}}, {{inputmaritalStatus1}}, {{work1}},
+  <span style="font-weight:bold"> RG: {{RG1}}</span> e {% if CPF1 == None or CPF1 == '' %}{% else %}<span style="font-weight:bold">CPF:{{CPF1}}</span>{% endif %}
+   {% if CNPJ == None or CNPJ == '' %}{% else %}<span style="font-weight:bold">CNPJ:</span>{% endif %}
+   residente e domiciliado na cidade de<span style="font-weight:bold"> {{city1}} </span>no endereço <span style="font-weight:bold">{{address1}}</span>,
+    doravante simplesmente denominado OUTORGANTE(A).</div>
+<div class="text">OUTORGADO(A):<span style="font-weight:bold"> {{name2}} </span>, {{bornfrom2}}, casada, aposentada,
+   <span style="font-weight:bold"> RG: </span>,<span style="font-weight:bold">OAB: {{OAB}}</span>  e <span style="font-weight:bold">CPF: </span>
+   residente e domiciliado na cidade de<span style="font-weight:bold"> CIDADE </span>no endereço <span style="font-weight:bold">ENDEREÇO</span>,
+    doravante simplesmente denominado OUTORGADO(A).</div>
+<div class="text">PODERES:</div>
+<div class="text">Por este instrumento particular de procuração, o outorgante supra qualificado, nomeia e constitui seu bastante procurador os outorgados,
+com poderes para o foro em geral, podendo para o fiel desempenho do presente mandato, usar de todos os meios permitidos em Direito, sem qualquer exclusão,
+representando-o judicial ou extrajudicialmente em qualquer ação que o outorgante for promovida, para o fim especial de defendê-lo podendo, para o fiel desempenho
+do mandado, produzir provas, fazer alegações escritas ou sustentação oral, interpor, arrazoar e contra arrazoar recursos, fazer acordo, receber e dar quitação,
+fazer acordo,  substabelecer, enfim, usar de todos os recursos em direito admitidos em qualquer instância ou Tribunal, para defender os interesses da outorgante.</div>
+
+{% endblock %}

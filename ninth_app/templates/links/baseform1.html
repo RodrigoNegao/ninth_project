@@ -1,0 +1,59 @@
+<div class="jumbotron">
+      <div class="title2">Dados para Contrato</div>
+      <form class="validate" method="POST" action= {% url 'pdfmodels/contratosimples.html' %}>
+        {% csrf_token %}
+        <div class="title2">Dados Pessoais do LOCADOR</div>
+        <div class="form-row">
+          <div class="form-group col-sm-4"><label>Nome:</label><input type="text" class="form-control" name="name1" maxlength="50" placeholder="" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Telefone(opcional) :</label><input type="text" class="form-control" name="nphone1" placeholder="Ex: 51-9895050"></div>
+          <div class="form-group col-sm-3"><label>Nacionalidade :</label><input type="text" class="form-control" value="Brasileiro" name="bornfrom1" placeholder=""></div>
+          <div class="form-group col-sm-2"><label for="inputmaritalStatus1">Estado Civil:</label>
+            <select id="inputmaritalStatus" name="inputmaritalStatus1" class="form-control"><option selected></option><option value="União Estavel">União Estavel</option><option value="Solteiro(a)">Solteiro(a)</option><option value="Casado(a)">Casado(a)</option><option value="Divorciado(a)">Divorciado(a)</option><option value="Viuvo(a)">Viuvo(a)</option></select></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-3"><label>Cargo:</label><input type="number" class="form-control" name="work1" maxlength="30" placeholder="Ex.: Adm, Aposentado"></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-3"><label>RG :</label><input type="number" class="form-control" name="RG1" maxlength="10" placeholder=""></div>
+            <div class="form-group col-sm-3"><label>CPF :</label><input type="number" class="form-control" name="CPF1" maxlength="11" placeholder=""></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Endereço:</label><input type="text" class="form-control" name="address1" maxlength="50" placeholder=""></div>
+          <div class="form-group col-sm-3"><label>Cidade:</label><input type="text" class="form-control" name="city1" maxlength="50" placeholder=""></div>
+          <div class="form-group col-sm-1"><label>Estado:</label><input type="text" class="form-control" name="state1" maxlength="2" placeholder=""></div>
+        </div>
+        <div class="title2">Dados Pessoais do LOCATARIO(A)</div>
+        <div class="form-row">
+          <div class="form-group col-sm-4"><label>Nome:</label><input type="text" class="form-control" name="name2" maxlength="50" placeholder=""></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Telefone(opcional) :</label><input type="text" class="form-control" name="nphone2" placeholder="Ex: 51-9895050"></div>
+          <div class="form-group col-sm-3"><label>Nacionalidade :</label><input type="text" class="form-control" value="Brasileiro" name="bornfrom2" placeholder=""></div>
+          <div class="form-group col-sm-2"><label for="inputmaritalStatus1">Estado Civil:</label>
+            <select id="inputmaritalStatus" name="inputmaritalStatus1" class="form-control"><option selected></option><option value="União Estavel">União Estavel</option><option value="Solteiro(a)">Solteiro(a)</option><option value="Casado(a)">Casado(a)</option><option value="Divorciado(a)">Divorciado(a)</option><option value="Viuvo(a)">Viuvo(a)</option></select></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-3"><label>Cargo:</label><input type="number" class="form-control" name="work2" maxlength="30" placeholder="Ex.: Adm, Aposentado"></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-sm-3"><label>RG :</label><input type="number" class="form-control" name="RG2" maxlength="10" placeholder=""></div>
+            <div class="form-group col-sm-3"><label>CPF :</label><input type="number" class="form-control" name="CPF2" maxlength="11" placeholder=""></div>
+        </div>
+        <div class="title2">Dados do Imovel</div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Endereço:</label><input type="text" class="form-control" name="address2" maxlength="50" placeholder=""></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-4"><label>Data Inicio:</label><input type='date' id='date' class="form-control"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Valor:</label><input type="number" class="form-control" name="price" maxlength="12" placeholder="0,00"></div>
+          <div class="form-group col-sm-3"><label>Valor Extenso:(Opcional)</label><input type="text" class="form-control" name="textprice" maxlength="50" placeholder="0,00"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-3"><label>Método de Pagamento:</label><input type="text" class="form-control" name="textprice" maxlength="60" placeholder=""></div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Gerar PDF">
+  </form>

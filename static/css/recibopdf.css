@@ -1,0 +1,8 @@
+ @page {
+   size: A4;      /* was Letter before, Change from the default size of A4 */
+  margin: 1cm; /* Set margin on each page */
+ }
+
+h4 {
+  text-align: center;
+}

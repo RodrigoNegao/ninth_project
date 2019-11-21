@@ -1,0 +1,72 @@
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Relative URI reference without a base URI: <img src="/static/images/logo.jpg">
+Relative URI reference without a base URI: <img src="/static/images/logo.jpg">
+Relative URI reference without a base URI: <img src="/static/images/logo.jpg">
+Relative URI reference without a base URI: <img src="/static/images/logo.jpg">
+Relative URI reference without a base URI: <img src="/static/images/logo.jpg">
+Relative URI reference without a base URI: <img src="<QuerySet [<Profile: rodrigo Profile>, <Profile: 01 Profile>, <Profile: dede Profile>, <Profile: 02 Profile>, <Profile: 05 Profile>]>">
+Relative URI reference without a base URI: <img src="/static/images/logo.jpg">
+Failed to load image at "http://127.0.0.1:8000/%3CQuerySet%20[%3CProfile:%20rodrigo%20Profile%3E,%20%3CProfile:%2001%20Profile%3E,%20%3CProfile:%20dede%20Profile%3E,%20%3CProfile:%2002%20Profile%3E,%20%3CProfile:%2005%20Profile%3E]%3E" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/%3CQuerySet%20[%3CProfile:%20rodrigo%20Profile%3E,%20%3CProfile:%2001%20Profile%3E,%20%3CProfile:%20dede%20Profile%3E,%20%3CProfile:%2002%20Profile%3E,%20%3CProfile:%2005%20Profile%3E]%3E" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Ignored `text-justify: inter-word` at 35:15, unknown property.
+Ignored `text-justify: inter-word` at 42:15, unknown property.
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Ignored `text-justify: inter-word` at 35:15, unknown property.
+Ignored `text-justify: inter-word` at 42:15, unknown property.
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Ignored `text-justify: inter-word` at 35:15, unknown property.
+Ignored `text-justify: inter-word` at 42:15, unknown property.
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Ignored `text-justify: inter-word` at 35:13, unknown property.
+Ignored `text-justify: inter-word` at 42:13, unknown property.
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Ignored `text-justify: inter-word` at 35:15, unknown property.
+Ignored `text-justify: inter-word` at 42:15, unknown property.
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "file:" (URLError: <urlopen error [WinError 3] O sistema não pode encontrar o caminho especificado: ''>)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "file:" (URLError: <urlopen error [WinError 3] O sistema não pode encontrar o caminho especificado: ''>)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "file:" (URLError: <urlopen error [WinError 3] O sistema não pode encontrar o caminho especificado: ''>)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "file:" (URLError: <urlopen error [WinError 3] O sistema não pode encontrar o caminho especificado: ''>)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Ignored `text-justify: inter-word` at 35:15, unknown property.
+Ignored `text-justify: inter-word` at 42:15, unknown property.
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Ignored `text-justify: inter-word` at 35:15, unknown property.
+Ignored `text-justify: inter-word` at 42:15, unknown property.
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Ignored `text-justify: inter-word` at 35:15, unknown property.
+Ignored `text-justify: inter-word` at 42:15, unknown property.
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)
+Failed to load image at "http://127.0.0.1:8000/static/images/logo.jpg" (HTTPError: HTTP Error 404: Not Found)

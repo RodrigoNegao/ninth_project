@@ -1,0 +1,83 @@
+{% extends "base/base.html" %}
+{% load bootstrap4 %}
+      {% comment %}
+          at the terminal, run pip install django-bootstrap4
+      {% endcomment %}
+
+{% block body_block %}
+<br>
+{% if registered %}
+  <h1>Thank you for registering!</h1>
+{% endif %}
+<br>
+<div class="container border p-3">
+      <h1>Login</h1>
+            {% if messages %}
+              {% for message in messages %}
+                <div{% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}role="alert">{{ message }}</div>
+                {% endfor %}
+                {% comment %} {% if message.tags == messages.error %}
+                    <div class="alert alert-danger" role="alert">
+                {% elif message.tags == messages.success %}
+                    <div class="alert alert-success" role="alert">
+                {% endif %}
+                      {% for message in messages %}
+                           <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+                      {% endfor %}
+                </div> {% endcomment %}
+             {% endif %}
+        <form class="form" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleDropdownFormEmail2">Email address</label>
+            <input type="email" name='email' class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Password</label>
+            <input type="password" name='password' class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+              <label class="form-check-label" for="dropdownCheck2">
+                Remember me
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+</div >
+<!-- <div class="container">
+<form class="dropdown-menu p-4">
+  <div class="form-group">
+    {% csrf_token %}
+    <label for="exampleDropdownFormEmail2">Email address</label>
+    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleDropdownFormPassword2">Password</label>
+    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+      <label class="form-check-label" for="dropdownCheck2">
+        Remember me
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+</div> -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

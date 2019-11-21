@@ -1,0 +1,6 @@
+Django==2.1.4
+django_qr_code==1.0.0
+django_debug_toolbar==2.0
+WeasyPrint==50
+Pillow==6.1.0
+qr_code==0.1.0

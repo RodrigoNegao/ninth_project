@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+      <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+      <style>
+      @page {
+        size: A4; /* Change from the default size of A4 */
+        margin: 2cm;
+        margin-top: 1cm;
+        margin-left: 2.5cm;
+        margin-bottom: 1cm;
+         /* Set margin on each page */
+      }
+
+        /* WeasyPrint CSS FLEX print fixtures */
+          * {
+              font-family: 'Tinos', sans-serif;
+              font-size: 1em;
+              }
+
+            .title1{
+              text-align: center;
+              font-size: 1.4em;
+              font-weight: bold;
+            }
+              hr{
+                padding: 0px;
+                margin-bottom: 0.5cm;
+                border: 0;
+                height: 1px;
+                background-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+                }
+
+            .text{
+              padding-bottom: 0.3cm;
+              font-size: 1.1em;
+              text-align: justify;
+              text-justify: inter-word;
+            }
+            .date{
+              padding-top: 1.5cm;
+              text-align: left;
+              font-size: 1em;
+              text-align: justify;
+              text-justify: inter-word;
+            }
+            footer{
+              position: fixed;
+              bottom: 0;
+              right: 0;
+           }
+           .flex{
+           display: flex;
+           flex-direction: row;
+           flex-wrap: nowrap;
+           justify-content: space-around;
+           align-items: stretch;
+           align-content: stretch;
+           }
+           .flex-item{
+           padding: 0px;
+           align-items: center;
+           justify-content: center;
+           }
+           .flex-sign{
+           padding: 0px;
+           padding-top: 1.3cm;
+           align-items: center;
+           justify-content: center;
+           }
+
+      .scissor {
+          border-top: 1px dashed #8c8b8b;
+          padding: 0px;
+            }
+            .scissor:after {
+              content: '\002702';
+              display: inline-block;
+              position: relative;
+              top: -12px;
+              left: 40px;
+              padding: 0 3px;
+              background: #f0f0f0;
+              color: #8c8b8b;
+              font-size: 18px;
+            }
+          img {
+            height: 30%;
+            width: 30%;
+            margin: 0 auto;
+            display: block;
+          }
+      </style>
+
+  </head>
+  <body>
+    <br/>
+    <img src="{% static 'images/komaki.jpg' %}" alt="komaki">
+    <br/>
+    <div class="title1">RECIBO DE PRESTAÇÃO DE SERVIÇO</div>
+    <hr>
+    <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recebi de, {{name1}},  CPF: {{CPF1}}
+    a quantia de R$ {{price}} ({{textprice}}) referente à serviços prestados {{service}}.</div>
+    <br>
+    <br>
+    <div class="date">{{localcity}}, {% now "j" %} de {% now "F" %} de {% now "Y" %}.</div>
+          <br/>
+          <div class="flex">
+            <div class="flex-sign">_______________________________</div>
+          </div>
+          <div class="flex">
+              <div class="flex-item">{{nome2}}</div>
+          </div>
+          <div class="flex">
+            <div class="flex-item">CPF:{{CPF2}}</div>
+          </div>
+        <br>
+        <br>
+        <br>
+        <hr class="scissor">
+        <br>
+        <br>
+        <div class="title1">RECIBO DE PRESTAÇÃO DE SERVIÇO</div>
+        <hr>
+        <div class="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recebi de, {{name1}},  CPF: {{CPF1}}
+        a quantia de R$ {{price}} ({{textprice}}) referente à serviços prestados {{service}}.</div>
+        <br>
+        <br>
+        <div class="date">{{localcity}}, {% now "j" %} de {% now "F" %} de {% now "Y" %}.</div>
+              <br/>
+              <div class="flex">
+                <div class="flex-sign">_______________________________</div>
+              </div>
+              <div class="flex">
+                  <div class="flex-item">{{nome2}}</div>
+              </div>
+              <div class="flex">
+                <div class="flex-item">CPF:{{CPF2}}</div>
+              </div>
+
+        <footer><img  src="{% static 'images/logo.jpg' %}" alt="Powered by: LOGO">
+        </footer>
+  </body>
+</html>

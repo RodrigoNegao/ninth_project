@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% extends "base/base.html" %}
+    {% block body_block %}
+        <div class="jumbotron">
+            <h1>Dados para Curriculo</h1>
+            <form  method="POST">
+              {% csrf_token %}
+              <h4>Dados Pessoais</h4>
+              <div class="form-row">
+                <div class="form-group col-sm-4"><label>Nome:</label>{{ form.first_name }} {{ help_texts.first_name }}</div>
+                <div class="form-group col-sm-8"><label>Sobrenome:</label>{{ form.last_name }}</div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-sm-3"><label>Telefone Principal:</label> {{ form.nphone1 }}</div>
+                <div class="form-group col-sm-3"><label>Telefone Contato:</label> {{ form.nphone2 }}</div>
+                <div class="form-group col-sm-2"><label>C. Habilitação.:</label>{{ form.driverslicense }}</div>
+                <div class="form-group col-sm-4"><label>Email:</label> {{ form.email }}</div>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-sm-4"><label>End.:</label> {{ form.address }}</div>
+                  <div class="form-group col-sm-2"><label>Bairro:</label> {{ form.neighborHood }}</div>
+                  <div class="form-group col-sm-3"><label>Cidade:</label>{{ form.city }}</div>
+                  <div class="form-group col-sm-1"><label>Estado:</label>{{ form.state }}</div>
+                  <div class="form-group col-sm-2"><label>CEP:</label>{{ form.zip }}</div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-2"><label>Estado Civil:</label>{{ form.maritalStatus }}</div>
+                </div>
+                <h4>Formação Escolar</h4>
+                  <div class="form-row">
+                      <div class="form-group col-sm-2"><label>Ensino:</label>{{ form.levelStudy }} </div>
+                      <div class="form-group col-sm-2"><label>Instituição:</label> {{ form.lInstitution }}</div>
+                      <div class="form-group col-sm-2"><label>Ano de Conclusão:</label> {{ form.lyearFinish }}</div>
+                      <div class="form-group col-sm-1">ADICIONAR</div>
+                    </div>
+                    <h4>Cursos e Especializações</h4>
+                    <div class="form-row">
+                        <div class="form-group col-sm-2"><label>Curso:</label>{{ form.course }} </div>
+                        <div class="form-group col-sm-2"><label>Instituição:</label> {{ form.cInstitution }}</div>
+                        <div class="form-group col-sm-2"><label>Ano de Conclusão:</label> {{ form.cyearFinish }}</div>
+                        <div class="form-group col-sm-2"><label>Carga Hororária:</label> {{ form.studyTime }}</div>
+                        <div class="form-group col-sm-1">ADICIONAR</div>
+                    </div>
+                    <h4>Experiencia Profissional</h4>
+                    <div class="form-row">
+                        <div class="form-group col-sm-4"><label>Empresa:</label>{{ form.company }}</div>
+                        <div class="form-group col-sm-2"><label>Cargo:</label>{{ form.function }}</div>
+                        <div class="form-group col-sm-2"><label>Periodo:</label> {{ form.worktime }}</div>
+                        <div class="form-group col-sm-1">ADICIONAR</div>
+                        <div class="w-100"></div>
+                        <div class="form-group lg-6"><label>Funções exercida no Cargo:(Opcional)</label>{{ form.functionDescribe }}</div>
+            
+                    </div>
+                    <!-- <div class="form-row">
+                        <div class="form-group col-sm-3"></div>
+                        <div class="form-group col-sm-3"></div>
+                        <div class="form-group col-sm-2"></div>
+                        <div class="form-group col-sm-4"></div>
+                    </div> -->
+
+              <input type="submit" class="btn btn-primary" value="Salvar">
+            </form>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    {% endblock %}

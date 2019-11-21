@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+    <style>
+      /* WeasyPrint page margin default print fixtures */
+      @page {
+        size: A4; /* Change from the default size of A4 */
+        margin: 2cm;
+        margin-top: 1cm;
+        margin-left: 2.5cm;
+        margin-bottom: 1cm;
+         /* Set margin on each page */
+      }
+      /* WeasyPrint CSS FLEX print fixtures */
+        * {
+            font-family: 'Tinos', sans-serif;
+            font-size: 1em;
+            }
+
+          .title1{
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+          }
+            hr{
+              padding: 0px;
+              margin-bottom: 0.5cm;
+              border: 0;
+              height: 1px;
+              background-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+              rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+              }
+
+          .text{
+            padding-bottom: 0.3cm;
+            font-size: 1em;
+            text-align: justify;
+            text-justify: inter-word;
+          }
+          .date{
+            padding-top: 1.5cm;
+            text-align: left;
+            font-size: 1em;
+            text-align: justify;
+            text-justify: inter-word;
+          }
+          footer{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+         }
+         .flex{
+         display: flex;
+         flex-direction: row;
+         flex-wrap: nowrap;
+         justify-content: space-around;
+         align-items: stretch;
+         align-content: stretch;
+         }
+         .flex-item{
+         padding: 0px;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         }
+         .flex-sign{
+         padding: 0px;
+         padding-top: 1.3cm;
+         align-items: center;
+         justify-content: center;
+         }
+
+        </style>
+  </head>
+
+  <body>
+
+<div class="title1">Contrato de Locação de IMOVEL</div>
+<hr>
+<div class="text">  LOCADOR(A):<span style="font-weight:bold">{{name1}}</span>,{% if nphone1 == not None or nphone1 == '' %}{%else%}Telefone:{{nphone1}},{%endif%} {{bornfrom1}}, {{inputmaritalStatus1}}, {{work1}},
+   <span style="font-weight:bold"> RG: {{RG1}}</span> e <span style="font-weight:bold">CPF: {{CPF1}}</span>
+   residente e domiciliado na cidade de<span style="font-weight:bold"> {{city1}}/{{state1}} </span>no endereço <span style="font-weight:bold">{{address1}}</span>,
+    doravante simplesmente denominado LOCADORA.</div>
+<div class="text">  LOCATÁRIO(A): <span style="font-weight:bold">{{name2}}</span>,{% if nphone2 == not None or nphone2 == '' %}{%else%}Telefone:{{nphone2}},{%endif%} {{bornfrom2}}, {{inputmaritalStatus2}}, {{work1}},
+<span style="font-weight:bold">RG: {{RG2}} </span> e <span style="font-weight:bold">CPF: {{CPF2}}</span>, e residente e domiciliado na cidade de<span style="font-weight:bold"> {{city1}}/{{state1}}</span> .</div>
+<div class="text">  IMÓVEL: O IMOVEL está localizado na {{address2}}.</div>
+<div class="text">  FINALIDADE: Destina-se o imóvel alugado a fins residências.</div>
+<div class="text">  PRAZO DE LOCAÇÃO: A locação em foco é fixada pelo prazo de 01 (Um) ano, iniciando no dia<span style="font-weight:bold"> {{datapicker}} </span>
+  , quando a chave deverá ser entregue ao locador, exceto prévio ajuste para renovação.</div>
+<div class="text">  PREÇO DA LOCAÇÃO: O aluguel mensal estabelecido, será de <span style="font-weight:bold">R${{price}} {% if textprice == not None or textprice == '' %}{%else%}( {{textprice}} ){%endif%}</span>sendo que o
+  primeiro aluguel foi pago antecipado no dia DATA;</div>
+<div class="text">  DO PAGAMENTO: O aluguel deverá ser <span style="font-weight:bold">{{methodprice}}</span>, até o quinto dia útil  de cada mês, caso pago
+   em atraso será acrescido de multa moratória de 10% ( dez por cento ) proporcionalmente por dia de atraso.</div>
+<div class="text">  REAJUSTE DO ALUGUEL: O valor da locação terá reajuste conforme acordo entre as partes, será reajustado em conformidade com os
+  índices legais ou, na sua falta, pelo índice de inflação do período, medido pela Fundação Getúlio Vargas.</div>
+<div class="text">  DESPESA DE LUZ E AGUA: Correrão por conta do locatário.</div>
+<div class="text">  ESTADO DO IMOVEL: Encontra-se por ocasião da locação em condições boas de uso, devendo ser entregue ao proprietário ao findar o contrato
+  nas mesmas condições que foi recebido.</div>
+<div class="text">  Obs:  O locatário  poderá no imóvel fazer  obra ou benfeitorias com prévia autorização  do Locador, sendo que estas poderam ser
+   descontadas da mensalidade do aluguel exceto aquelas que lhe incube por conservação;</div>
+<div class="text">  FORO: Elegem as partes o Foro da Comarca da cidade, para dirimir qualquer litígio que se fizer necessário a cerca do presente contrato.</div>
+<div class="text">  FORMALIDADES: Este contrato de locação, digitado em duas vias terá as firmas dos contratantes reconhecidas em tabelionato, nesta comarca.</div>
+<div class="text">  E por estarem assim acordadas assinaram o presente . </div>
+<div class="flex">
+  <div class="flex-sign">_________________________________</div>
+  <div class="flex-sign">_________________________________</div>
+</div>
+<div class="flex">
+  <div class="flex-item">LOCADOR</div>
+  <div class="flex-item">LOCATÁRIO</div>
+</div>
+<div class="flex">
+  <div class="flex-item">{{name1}}&nbsp;</div>
+  <div class="flex-item">{{name2}}&nbsp;</div>
+</div>
+<div class="flex">
+  <div class="flex-item">CPF:{{CPF1}}</div>
+  <div class="flex-item">CPF:{{CPF2}}</div>
+</div>
+
+<div class="date">{{city1}}, {% now "j" %} de {% now "F" %} de {% now "Y" %}.</div>
+
+<footer><img  src="{% static 'images/logo.jpg' %}" alt="Powered by: LOGO">
+</footer>
+
+
+  </body>
+</html>

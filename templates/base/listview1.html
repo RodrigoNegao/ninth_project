@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% comment %} Tests  {% endcomment %}
+<h2>Urls</h2>
+                      <ul>
+                          {% for url_name in urlpatterns %}
+                        <li><a href="{% url url_name.name %}"> {{ urlpatterns.name }}</a> </li>
+                        {% endfor %}
+                      </ul>
+
+<h2>Urls2</h2>
+{% comment %} <a href="{% url 'news-year-archive' 2012 %}">2012 Archive</a> {% endcomment %}
+{# Or with the year in a template context variable: #}
+<ul>
+{% for yearvar in year_list %}
+<li><a href="{% url 'news-year-archive' yearvar %}">{{ yearvar }} Archive</a></li>
+{% endfor %}
+</ul>

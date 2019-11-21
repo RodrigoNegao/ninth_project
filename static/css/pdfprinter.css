@@ -1,0 +1,15 @@
+ /* TODO create CSS to PDF  */
+@page {
+  size: A4; /* Change from the default size of A4 */
+  margin: 3mm; /* Set margin on each page */
+}
+/* WeasyPrint CSS FLEX print fixtures */
+    .container {
+      /* background-color: #2196F3; */
+    }
+
+      * {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1em;
+      padding-bottom: 6px;
+      }

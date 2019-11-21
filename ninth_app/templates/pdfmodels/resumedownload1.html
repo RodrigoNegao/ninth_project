@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+{% load static %}
+{% load qr_code %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <style>
+      @page {
+        size: A4; /* Change from the default size of A4 */
+        margin: 3mm; /* Set margin on each page */
+      }
+      /* WeasyPrint CSS FLEX print fixtures */
+          .container {
+            /* background-color: #2196F3; */
+          }
+
+            * {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1em;
+            padding-bottom: 6px;
+            }
+
+          .title1{
+            padding-top: 25px;
+            padding-bottom: 0px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            /* border-bottom: 5px solid black; */
+          }
+          .title2{
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+          }
+          .title3{
+            padding-top: 10px;
+            padding-bottom: 0px;
+            text-align: left;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-bottom: 1px solid black;
+            width: 30%
+          }
+          .left{
+            text-align: left;
+          }
+              .flex{
+            	display: flex;
+            	flex-direction: row;
+            	flex-wrap: nowrap;
+            	justify-content: flex-start;
+            	align-items: stretch;
+            	align-content: stretch;
+              /* background-color: rgba(255, 255, 255, 0.8); */
+            }
+            .flex-item{
+              padding-right: 30px;
+              padding-bottom: 0px;
+            }
+          hr{
+            padding: 0px;
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            }
+            footer{
+              position: fixed;
+              bottom: 0;
+              right: 0;
+            }
+  </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+                <div class="title1" >{{ first_name}} {{ first_name.last_name}} {{ last_name}}</div>
+                <hr>
+                <div class="title2"> Telefone Principal: {{nphone1}}/Telefone Contato:{{nphone2}}</div>
+                <div class="title2"> Email: {{email}}</div>
+                <div class="title3">Dados Pessoais</div>
+                        {% if inputDriverslicense == "Nenhum" %}{% else %}<div class="left">C. Habilitação: {{inputDriverslicense}}</div>{% endif %}
+                        <div class="left">Data de Nascimento: {{birthdate}}</div>
+                        <div class="left">End.: {{address}}</div>
+                          <div class="flex">
+                              <div class="flex-item">Bairro: {{neighborHood}}</div>
+                              <div class="flex-item">Cidade: {{city}}</div>
+                              <div class="flex-item">Estado: {{state}}</div>
+                              <div class="flex-item">CEP: {{zip}}</div>
+                          </div>
+                          <div class="left">Estado Civil: {{inputmaritalStatus}}</div>
+                  <div class="title3">Formação Escolar</div>
+                                <div class="flex">
+                                        <div class="flex-item">Ensino: {{inputlevelStudy1}}</div>
+                                        <div class="flex-item">Ano de Conclusão: {{lyearFinish1}}</div>
+                                    </div>
+                                <div class="left">Instituição: {{lInstitution1}}</div>
+                      {% if inputlevelStudy2 == None or inputlevelStudy2 == '' %}
+                                  <div class="left">&nbsp;</div>
+                      {% else %}
+                                      <div class="flex">
+                                        <div class="flex-item">Ensino: {{inputlevelStudy2}}</div>
+                                        <div class="flex-item">Ano de Conclusão: {{lyearFinish2}}</div>
+                                          </div>
+                                      <div class="left">Instituição: {{lInstitution2}}</div>
+                                {% comment %} dont work -->is not or != -- I tried  {% endcomment %}
+                                {% if inputlevelStudy3 == None or inputlevelStudy3 == '' %}
+                                {% else %}
+                                  <div class="flex">
+                                      <div class="flex-item">Ensino: {{inputlevelStudy3}}</div>
+                                      <div class="flex-item">Ano de Conclusão: {{lyearFinish3}}</div>
+                                  </div>
+                                  <div class="left">Instituição: {{lInstitution3}}</div>
+                                {% endif %}
+                                {% if inputlevelStudy4 == None or inputlevelStudy4 == '' %}
+                                {% else %}
+                                    <div class="flex">
+                                      <div class="flex-item">Ensino: {{inputlevelStudy4}}</div>
+                                      <div class="flex-item">Ano de Conclusão: {{lyearFinish4}}</div>
+                                        </div>
+                                    <div class="left">Instituição: {{lInstitution4}}</div>
+                                {% endif %}
+                      {% endif %}
+
+                    {% if course1 == None or course1 == '' %}
+                          <div class="left">&nbsp;</div>
+                    {% else %}
+                        <div class="title3">Cursos e Especializações</div>
+                              <div class="flex">
+                                  <div class="flex-item">Curso: {{course1}}</div>
+                                  <div class="flex-item">Ano de Conclusão: {{cyearFinish1}}</div>
+                                  <div class="flex-item">Carga Hororária: {{studyTime1}}</div>
+                              </div>
+                              <div class="left">Instituição: {{cInstitution1}}</div>
+                    {% endif %}
+                    {% if course2 == None or course2 == '' %}
+                    {% else %}
+                          <div class="flex">
+                              <div class="flex-item">Curso: {{course2}}</div>
+                              <div class="flex-item">Ano de Conclusão: {{cyearFinish2}}</div>
+                              <div class="flex-item">Carga Hororária: {{studyTime2}}</div>
+                          </div>
+                          <div class="left">Instituição: {{cInstitution2}}</div>
+                    {% endif %}
+                    {% if course3 == None or course3 == '' %}
+                    {% else %}
+                        <div class="flex">
+                            <div class="flex-item">Curso: {{course3}}</div>
+                            <div class="flex-item">Ano de Conclusão: {{cyearFinish3}}</div>
+                            <div class="flex-item">Carga Hororária: {{studyTime3}}</div>
+                        </div>
+                        <div class="left">Instituição: {{cInstitution3}}</div>
+                    {% endif %}
+                    {% if course4 == None or course4 == '' %}
+                    {% else %}
+                            <div class="flex">
+                                <div class="flex-item">Curso: {{course4}}</div>
+                                <div class="flex-item">Ano de Conclusão: {{cyearFinish4}}</div>
+                                <div class="flex-item">Carga Hororária: {{studyTime4}}</div>
+                            </div>
+                            <div class="left">Instituição: {{cInstitution4}}</div>
+                    {% endif %}
+
+                          {% if company2 == None or company2 == '' %}
+                            <div class="title3">Experiencia Profissional</div>
+                          {% else %}
+                            <div class="title3">Experiencia Profissionais</div>
+                          {% endif %}
+                          {% if company1 == None or company1 == '' %}
+                          <!-- 1° job  -->
+                              <br>
+                              <div class="left" style="font-size: 1.2em">Primeiro Emprego</div>
+                          {% else %}
+                                                   <div class="left">Empresa: {{company1}}</div>
+                                                   <div class="flex">
+                                                       <div class="flex-item">Cargo: {{function1}}</div>
+                                                       <div class="flex-item">Periodo: {{worktime1}}</div>
+                                                   </div>
+                                                        {% if functionDescribe1 == None or functionDescribe1 == '' %}
+                                                        {% else %}
+                                                            <div class="left">Funções exercida no Cargo: {{functionDescribe1}}</div>
+                                                        {% endif %}
+                                                  {% if company2 == None or company2 == ''  %}
+                                                  {% else %}
+                                                  <div class="left">Empresa: {{company2}}</div>
+                                                  <div class="flex">
+                                                      <div class="flex-item">Cargo: {{function2}}</div>
+                                                      <div class="flex-item">Periodo: {{worktime2}}</div>
+                                                  </div>
+                                                        {% if functionDescribe2 == None or functionDescribe2 == '' %}
+                                                        {% else %}
+                                                              <div class="left">Funções exercida no Cargo: {{functionDescribe2}}</div>
+                                                        {% endif %}
+                                                  {% endif %}
+                                                  {% if company3 == None or company3 == '' %}
+                                                  {% else %}
+                                                   <div class="left">Empresa: {{company3}}</div>
+                                                   <div class="flex">
+                                                     <div class="flex-item">Cargo: {{function3}}</div>
+                                                     <div class="flex-item">Periodo: {{worktime3}}</div>
+                                                   </div>
+                                                       {% if functionDescribe3 == None or functionDescribe3 == '' %}
+                                                       {% else %}
+                                                       <div class="left">Funções exercida no Cargo: {{functionDescribe3}}</div>
+                                                       {% endif %}
+                                                  {% endif %}
+                                                  {% if company4 == None or company4 == '' %}
+                                                  {% else %}
+                                                   <div class="left">Empresa: {{company4}}</div>
+                                                   <div class="flex">
+                                                       <div class="flex-item">Cargo: {{function4}}</div>
+                                                       <div class="flex-item">Periodo: {{worktime4}}</div>
+                                                   </div>
+                                                         {% if functionDescribe4 == None or functionDescribe4 == '' %}
+                                                         {% else %}
+                                                         <div class="left">Funções exercida no Cargo: {{functionDescribe4}}</div>
+                                                         {% endif %}
+                                                 {% endif %}
+                          {% endif %}
+              </div>
+
+  {% qr_from_text "Hello World!" size="t"  border=4 image_format="png" error_correction="L" %}
+
+  <footer>
+    <img  src="{% static 'images/logo.jpg' %}" alt="Powered by: LOGO">
+  </footer>
+</html>

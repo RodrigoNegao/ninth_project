@@ -1,0 +1,1 @@
+virtualenv e:\\anaconda\\envs\\chatwapp
