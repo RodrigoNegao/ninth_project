@@ -43,5 +43,5 @@ pipelines:
                 HEROKU_API_KEY: $HEROKU_API_KEY
                 HEROKU_APP_NAME: $HEROKU_APP_NAME
                 #LOCAL_PATH: "./"
-                ZIP_FILE: 'ninth_project.tar.gz' #"ninthapp.zip"
+                ZIP_FILE: 'ninth_project.tar.gz'  #"ninthapp.zip"
           
