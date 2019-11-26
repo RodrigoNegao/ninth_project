@@ -14,7 +14,7 @@ pipelines:
         name: "Build and test"
         script:
            - zipfile="ninthapp"
-           - dir="zip"
+           - dir="ninth_project"
            - python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
             
     - step:
