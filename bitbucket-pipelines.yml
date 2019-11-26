@@ -15,7 +15,9 @@ pipelines:
         script:
            - zipfile="ninthapp"
            - dir="./"
-           - python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
+           - apt-get install zip
+           - zip -r $zipfile.zip $dir
+           #- python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
             
     - step:
         name: "Prodution"
