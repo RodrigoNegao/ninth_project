@@ -19,5 +19,5 @@ pipelines:
             variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
                 HEROKU_APP_NAME: $HEROKU_APP_NAME
-                ZIP_FILE: $ZIP_FILE
+                ZIP_FILE: 'example-$BITBUCKET_BUILD_NUMBER.zip'
           
