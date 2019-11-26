@@ -10,17 +10,17 @@ image: python:3.7.3
  
 pipelines:
   default:
-    - step:
-        name: "Build ZIP"
-        script:
+    #- step:
+       # name: "Build ZIP"
+      #  script:
            #- zipfile="ninthapp"
            #- dir="./"  #"ninth_project/"
            #- apt-get install zip
            #- zip -r $zipfile.zip $dir
            #- python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
-           - zip -r ninthapp.zip . #index.html appspec.yml
-        artifacts:
-             - ninthapp.zip
+          # - zip -r ninthapp.zip ./ #index.html appspec.yml
+        #artifacts:
+     #        - ninthapp.zip
     #- step:
      #       name: Build and test
       #      image: maven:3
@@ -43,5 +43,5 @@ pipelines:
                 HEROKU_API_KEY: $HEROKU_API_KEY
                 HEROKU_APP_NAME: $HEROKU_APP_NAME
                 #LOCAL_PATH: "./"
-                ZIP_FILE: "ninthapp.zip"
+                ZIP_FILE: 'ninth_project.tar.gz' #"ninthapp.zip"
           
