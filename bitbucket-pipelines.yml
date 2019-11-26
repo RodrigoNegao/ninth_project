@@ -13,9 +13,9 @@ pipelines:
     - step:
         name: "Build and test"
         script:
-           - zip -r ninthapp-$BITBUCKET_BUILD_NUMBER.zip .
-        artifacts: 
-           - ninthapp-*.zip
+           - zipfile="ninthapp"
+           - dir="..."
+           - python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
             
     - step:
         name: "Prodution"
@@ -27,5 +27,5 @@ pipelines:
             variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
                 HEROKU_APP_NAME: $HEROKU_APP_NAME
-                ZIP_FILE: 'ninthapp-$BITBUCKET_BUILD_NUMBER.zip'
+                ZIP_FILE: '$zipfile.zip'
           
