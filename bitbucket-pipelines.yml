@@ -5,8 +5,8 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 image: python:3.7.3
 
-#clone:
- #depth: full
+clone:
+ depth: full
  
 pipelines:
   default:
@@ -38,10 +38,11 @@ pipelines:
           - pip
         script: # Modify the commands below to build your repository.
           - pip install -r requirements1.txt
-          - pipe: atlassian/heroku-deploy:1.1.0
-            variables:
-                HEROKU_API_KEY: $HEROKU_API_KEY
-                HEROKU_APP_NAME: $HEROKU_APP_NAME
-                #LOCAL_PATH: "./"
-                ZIP_FILE: "ninth_project.tar.gz"  #"ninthapp.zip"
-          
+          - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD
+          #- pipe: atlassian/heroku-deploy:1.1.0
+           # variables:
+            #    HEROKU_API_KEY: $HEROKU_API_KEY
+             #   HEROKU_APP_NAME: $HEROKU_APP_NAME
+              #  #LOCAL_PATH: "./"
+               # ZIP_FILE: "ninth_project.tar.gz"  #"ninthapp.zip"
+            
