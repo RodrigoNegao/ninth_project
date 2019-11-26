@@ -53,15 +53,15 @@ def index(request):
             
 
 def resume(request):
-    form = NewTemporaryUserForm()
+    # form = NewTemporaryUserForm()
 
-    if request.method == "POST":
-        form = NewTemporaryUserForm(request.POST)
-        if form.is_valid():
-            form.save(commit=True)
-            return index(request) #go to index
-        else:
-            print('ERROR FORM INVALID')
+    # if request.method == "POST":
+    #     form = NewTemporaryUserForm(request.POST)
+    #     if form.is_valid():
+    #         form.save(commit=True)
+    #         return index(request) #go to index
+    #     else:
+    #         print('ERROR FORM INVALID')
 
     return render(request, 'base/resume.html', {'form':form})
 
@@ -386,7 +386,7 @@ def resumedownload(request):
     worktime4 = request.POST.get('worktime4')
     functionDescribe4 = request.POST.get('functionDescribe4')
     
-    #TODO this work , save picture on server.
+    #TODO this work , save picture on server, ERROR if don't login.
     # if request.method == 'POST':
     #     # picResume = updatePicResumeForm( data=request.POST, files=request.FILES , instance=request.user)
     #     picResume = updateImageResumeForm(data=request.POST, files=request.FILES, instance=request.user.profile)
@@ -420,7 +420,7 @@ def resumedownload(request):
     'company4':company4,'function4':function4,'worktime4':worktime4,'functionDescribe4':functionDescribe4,
     'contact_detail':contact_detail} 
 
-    html_string = render_to_string('pdfmodels/resumedownload.html', context, request=request) 
+    html_string = render_to_string('pdfmodels/resumedownload.html', context, request=request) # attachment --download pdf and inline --open reader pdf
     html = HTML(string=html_string,base_url=request.build_absolute_uri())
     # stylesheets1=[CSS(settings.STATIC_ROOT +  'css/pdfprint.css')]) #stylesheets=[cssName],font_config=font_config)
     result = html.write_pdf() #stylesheets=stylesheets1)
