@@ -13,9 +13,9 @@ pipelines:
     - step:
         name: "Build and test"
         script:
-           - zip -r ninthapp-$BITBUCKET_BUILD_NUMBER.zip.
+           - zip -r ninthapp-$BITBUCKET_BUILD_NUMBER.zip .
         artifacts: 
-           - ninthapp-*.zip.
+           - ninthapp-*.zip
             
     - step:
         name: "Prodution"
@@ -23,7 +23,6 @@ pipelines:
           - pip
         script: # Modify the commands below to build your repository.
           - pip install -r requirements1.txt
- 
           - pipe: atlassian/heroku-deploy:1.1.0
             variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
