@@ -14,10 +14,10 @@ pipelines:
         name: "Build and test"
         script:
            - zipfile="ninthapp"
-           - dir="./"
-           - apt-get install zip
-           - zip -r $zipfile.zip $dir
-           #- python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
+           - dir="ninth_project/"  #"./"
+           #- apt-get install zip
+           #- zip -r $zipfile.zip $dir
+           - python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
             
     - step:
         name: "Prodution"
