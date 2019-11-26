@@ -10,17 +10,17 @@ image: python:3.7.3
  
 pipelines:
   default:
-    #- step:
-     #   name: "Build ZIP"
-      #  script:
+    - step:
+        name: "Build ZIP"
+        script:
            #- zipfile="ninthapp"
            #- dir="./"  #"ninth_project/"
            #- apt-get install zip
            #- zip -r $zipfile.zip $dir
            #- python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
-       #    - tar czfv application.tgz dist/
-        #artifacts:
-         #    - application.tgz
+           - tar czfv application.tgz ./
+        artifacts:
+             - application.tgz
     #- step:
      #       name: Build and test
       #      image: maven:3
@@ -28,10 +28,10 @@ pipelines:
         #      - maven
          #   script:
           #    - mvn -B clean verify
-    - step:
-            name: Create artifact
-            script:
-              - tar czfv application.tgz pom.xml src/        
+    #- step:
+     #       name: Create artifact
+      #      script:
+       #       - tar czfv application.tgz pom.xml ./        
     - step:
         name: "Prodution"
         caches:
