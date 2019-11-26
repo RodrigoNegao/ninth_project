@@ -15,9 +15,10 @@ pipelines:
           - pip
         script: # Modify the commands below to build your repository.
           - pip install -r requirements1.txt
+          - zip -r $HEROKU_APP_NAME-$BITBUCKET_BUILD_NUMBER.zip 
           - pipe: atlassian/heroku-deploy:1.1.0
             variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
                 HEROKU_APP_NAME: $HEROKU_APP_NAME
-                ZIP_FILE: '$HEROKU_APP_NAME.zip'
+                ZIP_FILE: '$$HEROKU_APP_NAME-$BITBUCKET_BUILD_NUMBER.zip'
           
