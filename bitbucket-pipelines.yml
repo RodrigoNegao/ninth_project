@@ -21,13 +21,13 @@ pipelines:
        #    - tar czfv application.tgz dist/
         #artifacts:
          #    - application.tgz
-    - step:
-            name: Build and test
-            image: maven:3
-            caches: 
-              - maven
-            script:
-              - mvn -B clean verify
+    #- step:
+     #       name: Build and test
+      #      image: maven:3
+       #     caches: 
+        #      - maven
+         #   script:
+          #    - mvn -B clean verify
     - step:
             name: Create artifact
             script:
