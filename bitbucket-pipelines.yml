@@ -13,11 +13,14 @@ pipelines:
     - step:
         name: "Build ZIP"
         script:
-           - zipfile="ninthapp"
-           - dir="./"  #"ninth_project/"
+           #- zipfile="ninthapp"
+           #- dir="./"  #"ninth_project/"
            #- apt-get install zip
            #- zip -r $zipfile.zip $dir
-           - python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
+           #- python -c "import shutil;shutil.make_archive('$zipfile','zip',root_dir='.', base_dir='$dir')"
+           - tar czfv application.tgz dist/
+        artifacts:
+             - application.tgz
             
     - step:
         name: "Prodution"
@@ -30,5 +33,5 @@ pipelines:
                 HEROKU_API_KEY: $HEROKU_API_KEY
                 HEROKU_APP_NAME: $HEROKU_APP_NAME
                 LOCAL_PATH: "./"
-                ZIP_FILE: "ninthapp.zip"
+                ZIP_FILE: "application.tgz" #"ninthapp.zip"
           
