@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # 'accounts.apps.AccountsConfig',
     'qr_code',
     'taggit',
-    'django_extensions',
+    #'django_extensions',
     #last one
     'debug_toolbar',
 ]
