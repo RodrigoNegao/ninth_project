@@ -63,7 +63,7 @@ def resume(request):
     #     else:
     #         print('ERROR FORM INVALID')
 
-    return render(request, 'base/resume.html', {'form':form})
+    return render(request, 'base/resume.html'),# {'form':form})
 
 
 #Tested - OK
@@ -208,7 +208,7 @@ def procsimples(request):
 
 def automenor(request):
     # """Generate pdf."""
-    name1 = request.POST.get('name1').upper()
+    name1 = request.POST.get('name1')#.upper()
     nphone1 = request.POST.get('nphone1')
     nphone2 = request.POST.get('nphone2')
     bornfrom1 = request.POST.get('bornfrom1')
@@ -217,26 +217,26 @@ def automenor(request):
     RG1 = request.POST.get('RG1')
     RG1from = request.POST.get('RG1from')
     CPF1 = request.POST.get('CPF1')
-    address1 = request.POST.get('address1').capitalize()
-    city1 = request.POST.get('city1').capitalize()
-    state1 = request.POST.get('state1').upper()
-    kinship = request.POST.get('kinship').capitalize()
-    name2 = request.POST.get('name2').upper()
+    address1 = request.POST.get('address1')#.capitalize()
+    city1 = request.POST.get('city1')#.capitalize()
+    state1 = request.POST.get('state1')#.upper()
+    kinship = request.POST.get('kinship')#.capitalize()
+    name2 = request.POST.get('name2')#.upper()
     age1 = request.POST.get('age1')
     RG2 = request.POST.get('RG2')
     RG2from = request.POST.get('RG2from')
-    name3 = request.POST.get('name3').upper()
+    name3 = request.POST.get('name3')#.upper()
     nphone3 = request.POST.get('nphone3')
     age2 = request.POST.get('age2')
     RG3 = request.POST.get('RG3')
     RG3from = request.POST.get('RG3from')
-    address2 = request.POST.get('address2').capitalize()
-    city2 = request.POST.get('city2').capitalize()
-    state2 = request.POST.get('state2').upper()
-    party1 = request.POST.get('party1').upper()
+    address2 = request.POST.get('address2')#.capitalize()
+    city2 = request.POST.get('city2')#.capitalize()
+    state2 = request.POST.get('state2')#.upper()
+    party1 = request.POST.get('party1')#.upper()
     datapicker = request.POST.get('datapicker')
-    address3 = request.POST.get('address3').capitalize()
-    localcity = request.POST.get('localcity').capitalize()
+    address3 = request.POST.get('address3')#.capitalize()
+    localcity = request.POST.get('localcity')#.capitalize()
 
     context= {'name1':name1,'nphone1':nphone1,'nphone2':nphone2,'bornfrom1':bornfrom1,'inputmaritalStatus1':inputmaritalStatus1,
         'work1':work1,'RG1':RG1,'RG1from':RG1from,'CPF1':CPF1,'address1':address1,'city1':city1,'state1':state1,'kinship':kinship,
@@ -282,6 +282,7 @@ def procsimplesdados(request):
 def teste1(request):
     return render(request, 'testes/teste1.html')
 
+#TODO teste save data and request to create a PDF
 def teste2(request):
     return render(request, 'testes/teste2.html')
 
@@ -292,6 +293,7 @@ def teste2(request):
 #     context= {'data':data}
 #     return render(request, 'base/sucesso.html', context)
 
+#TODO teste save data and request to create a PDF
 def sucesso(request):
     # """Generate pdf."""
     # Model data (list)
@@ -299,11 +301,7 @@ def sucesso(request):
     data= request.POST.get('textbox1')
     data1= request.POST.get('textbox2')
 
-    respImage= request.POST.get('image')
-    img = Image.open(respImage)
-    img.save('sid.jpg', 'jpeg')
-    image1 = img
-    context= {'data':data,'data1':data1,'image1':image1}
+    context= {'data':data,'data1':data1,}
 
     # Rendered
     html_string = render_to_string('base/sucesso.html', context) #, {'list': list})

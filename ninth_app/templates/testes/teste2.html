@@ -4,27 +4,16 @@
 
 
 <br>
-    <h1>Upload image</h1>
-{% qr_from_text "OI" size=10 border=6 %}
-
- <br>
- 
-{% qr_from_text "Hello World!" size="t"  border=2 image_format="png" error_correction="L" %}
+  
 <br>
 
 <form  method="POST" action= {% url 'sucesso' %}>
   {% csrf_token %}
-  <div class="custom-file" >
-    <input type="file" name="image" class="custom-file-input" id="customFile">
-    <label class="custom-file-label"  for="customFile">Choose file</label>
-  </div>
+    
+
     <input type="submit" class="btn btn-primary" value="GeraR foto PDF">
 </form>
 <br>
-<div class="input-group input-daterange">
-    <input type="text" class="form-control" value="2012-04-05">
-    <div class="input-group-addon">to</div>
-    <input type="text" class="form-control" value="2012-04-19">
 </div>
 <br>
 

@@ -28,3 +28,6 @@ class ResumeUser(models.Model): #temporaryUser
     function = models.CharField(max_length=128)
     worktime = models.CharField(max_length=128)
     functionDescribe = models.CharField(max_length=300)
+
+class teste1(models.Model): #temporaryUser
+    user = models.OneToOneField(User, on_delete=models.CASCADE) 
