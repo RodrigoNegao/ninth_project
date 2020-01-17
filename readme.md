@@ -1,7 +1,7 @@
 # Site de para Criação de Documentos
 Projeto feito com Django , Weasyprint e outros.
 
-##Teste no Celular - Windows
+## Teste no Celular - Windows
 - Abra cmd 
         Digite 'ipconfig' 
 - Abra no projeto settings.py 
