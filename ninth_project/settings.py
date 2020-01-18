@@ -25,7 +25,7 @@ SECRET_KEY = 'df(b!f&crdh7i)$+sd3-ncq8!u3kttsoj)_=#vl+9u*su5&$a8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.25.136']
+ALLOWED_HOSTS = []
 
 #run toolbar only INTERNAL IP
 #first time, after all process, you need use -python manage.py collectstatic-
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'ninth_app',
     'accounts',
     'doctag',
-    'bootstrap4',
+    # 'bootstrap4',
     # 'accounts.apps.AccountsConfig',
     'qr_code',
     'taggit',
