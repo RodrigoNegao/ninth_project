@@ -1,2 +1,4 @@
 # Don't track content of these Files
 comands.txt
+bitbucket-pipelines.yml
+db.sqlite3
