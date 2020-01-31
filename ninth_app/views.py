@@ -418,23 +418,24 @@ def resumedownload(request):
     'company4':company4,'function4':function4,'worktime4':worktime4,'functionDescribe4':functionDescribe4,
     'contact_detail':contact_detail} 
 
-    # return render(request, 'pdfmodels/resumedownload.html', context) #open Html A4
+    return render(request, 'pdfmodels/resumedownload.html', context) #open Html A4
 
-    html_string = render_to_string('pdfmodels/resumedownload.html', context, request=request) # attachment --download pdf and inline --open reader pdf
-    html = HTML(string=html_string,base_url=request.build_absolute_uri())
-    # stylesheets1=[CSS(settings.STATIC_ROOT +  'css/pdfprint.css')]) #stylesheets=[cssName],font_config=font_config)
-    result = html.write_pdf() #stylesheets=stylesheets1)
+    # TODO Some Servers can't render cause is hard 
+    # html_string = render_to_string('pdfmodels/resumedownload.html', context, request=request) # attachment --download pdf and inline --open reader pdf
+    # html = HTML(string=html_string,base_url=request.build_absolute_uri())
+    # # stylesheets1=[CSS(settings.STATIC_ROOT +  'css/pdfprint.css')]) #stylesheets=[cssName],font_config=font_config)
+    # result = html.write_pdf() #stylesheets=stylesheets1)
 
-    # Creating http response
-    response = HttpResponse(content_type='application/pdf;')
-    response['Content-Disposition'] = 'inline; filename=resumedownload.pdf'
-    response['Content-Transfer-Encoding'] = 'binary'
-    with tempfile.NamedTemporaryFile(delete=True) as output:
-        output.write(result)
-        output.flush()
-        output.seek(0)
-        response.write(output.read())
-    return response
+    # # Creating http response
+    # response = HttpResponse(content_type='application/pdf;')
+    # response['Content-Disposition'] = 'inline; filename=resumedownload.pdf'
+    # response['Content-Transfer-Encoding'] = 'binary'
+    # with tempfile.NamedTemporaryFile(delete=True) as output:
+    #     output.write(result)
+    #     output.flush()
+    #     output.seek(0)
+    #     response.write(output.read())
+    # return response
 
 
 # class MyModelView(request):

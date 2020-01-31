@@ -1,6 +1,18 @@
 # Site de para Criação de Documentos
 Projeto feito com Django , Weasyprint e outros.
-Siga as ordem.
+
+# O que Contem o Projeto:
+- Criação de Usuario Personalizado (Confirmação de Senha e outros);
+- Login por Email;
+- Personlização de alertas no sites (Testes de Respostas Django e Bootstrap);
+- Testes de CRUD personalizados;
+- Teste de bancos de dados salvos no SQLite;
+- Uploads de Fotos;
+- Testes de Mask Jquery;
+- Testes JavaScript (Animações);
+- Render para PDF (Testes de Renderização com imagens para os servidores);
+
+## Para uma boa instalação e testes siga a ordem abaixo.
 
 ## Criar Conda Config Django
 - Primeiro Configure cmd [Configurar Conda Env](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)

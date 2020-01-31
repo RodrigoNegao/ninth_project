@@ -19,6 +19,10 @@
     {% block body_block %}
             <div class="jumbotron">
             <h1>Dados para Curriculo</h1>
+            {% if user.is_authenticated %}
+                <h2>O Curriculo não estara em format .PDF porque o servidor não
+                cosegue processar foto. É só clicar com botão direito imprimir que em A4</h2>
+            {% endif %}
            
             {% comment %} <p>1{{ user.picresume.url }}</p>
             
