@@ -1,6 +1,6 @@
 # Site de para Criação de Documentos
 Projeto e area de TESTES feito com Django , Weasyprint e outros. 
-- Vai ter um modeulos e codes em testes.
+- Vai ter um modulos e codes em testes.
 
 ## O que contém o Projeto:
 - Criação de Usuario Personalizado (Confirmação de Senha e outros);
