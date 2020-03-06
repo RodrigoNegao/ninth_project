@@ -9,7 +9,8 @@ Projeto e area de TESTES feito com Django , Weasyprint e outros.
 - Testes de CRUD personalizados;
 - Teste de bancos de dados salvos no SQLite;
 - Uploads de Fotos;
-- Testes de Mask Jquery;
+- Compactação das fotos para otimização do Servidor;
+- Testes de Mask Jquery (data,telefone);
 - Testes JavaScript (Animações);
 - Render para PDF (Testes de Renderização com imagens para os servidores);
 
