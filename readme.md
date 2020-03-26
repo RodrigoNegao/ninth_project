@@ -6,7 +6,7 @@ Projeto e area de TESTES feito com Django , Weasyprint e outros.
 ## O que contém o Projeto:
 - Criação de Usuario Personalizado (Confirmação de Senha e outros);
 - Login por Email;
-- Personlização de alertas no sites (Testes de Respostas Django e Bootstrap);
+- Personalização de alertas no sites (Testes de Respostas Django e Bootstrap);
 - Testes de CRUD personalizados;
 - Teste de bancos de dados salvos no SQLite;
 - Uploads de Fotos;
