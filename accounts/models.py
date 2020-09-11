@@ -106,10 +106,9 @@ class User(AbstractBaseUser, PermissionsMixin):
             img2.save(self.picresume.path)
 
 
-class Profile(models.Model):  # User):
+class Profile(models.Model): 
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)        
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     imageresume = models.ImageField(default='accounts/defaults/default1.jpg',
      upload_to=upload_location2)
 
@@ -127,21 +126,15 @@ class Profile(models.Model):  # User):
             img1.thumbnail(output_size)
             img1.save(self.imageresume.path)
 
-    #get absolute url
-    # def __unicode__(self):
-    #     return '%s%s' %(self.last_name, self.photo)
-
-    # def get_absolute_url(self):
-    #     return reverse("profile", kwargs={"pk": self.id})
 
 
 #it will create Profile then User will create 
-@receiver(signals.post_save, sender=User)
-def create_customer(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+# @receiver(signals.post_save, sender=User)
+# def create_customer(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
 
 
-@receiver(signals.post_save, sender=User)
-def save_profile(sender, instance, **kwargs):
-    instance.profile.save()
+# @receiver(signals.post_save, sender=User)
+# def save_profile(sender, instance, **kwargs):
+#     instance.profile.save()

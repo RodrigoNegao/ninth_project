@@ -1,7 +1,9 @@
 # Site de para Criação de Documentos
-Projeto e area de TESTES feito com Django , Weasyprint e outros. 
+Projeto e area de TESTES feito com Django 2.1 , Weasyprint e outros. 
 - Projeto FOCADO em BackEnd.
 - Vai ter um modulos e codes em testes.
+- Rederização em PDF na maioria dos documentos.
+
 
 ## O que contém o Projeto:
 - Criação de Usuario Personalizado (Confirmação de Senha e outros);
