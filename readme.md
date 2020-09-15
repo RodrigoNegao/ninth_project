@@ -1,5 +1,5 @@
 # Site de para Criação de Documentos
-Projeto e area de TESTES feito com Django 2.1 , Weasyprint e outros. 
+Projeto e area de TESTES feito com Django 2.2.9 , Weasyprint e outros. 
 - Projeto FOCADO em BackEnd.
 - Vai ter um modulos e codes em testes.
 - Rederização em PDF na maioria dos documentos.
@@ -39,10 +39,14 @@ conda create -n MyDjangoEnv python
  ```
 ## Config Django
 ```bash
-python manage.py makemigrations accounts
 python manage.py migrate accounts
-python manage.py makemigrations
+python manage.py makemigrations accounts
+python manage.py migrate ninth_app
+python manage.py makemigrations ninth_app
+python manage.py migrate doctag
+python manage.py makemigrations doctag
 python manage.py migrate
+python manage.py makemigrations
 python manage.py createsuperuser
 ```
 

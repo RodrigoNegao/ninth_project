@@ -5,3 +5,4 @@ Pillow==6.1.0
 django-bootstrap4==0.0.7
 django_qr_code==1.0.0
 django-taggit==0.23.0
+bootstrap4==0.1.0
